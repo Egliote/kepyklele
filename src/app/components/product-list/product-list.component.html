@@ -1,5 +1,12 @@
+<div>
+  <label>
+    Ieškoti:
+    <input [(ngModel)]="search" placeholder="Produkto pavadinimas">
+  </label>
+</div>
+
 <table class="table">
-  <tr *ngFor="let product of products">
+  <tr *ngFor="let product of products | productfilter:search">
     <td>{{product.id}}</td>
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>

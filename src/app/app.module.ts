@@ -15,6 +15,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { OrderListComponent } from './components/order-list/order-list.component';
 import { ProductService } from './services/product.service';
+import { FormsModule } from '@angular/forms';
+import { ProductfilterPipe } from './productfilter.pipe';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,13 @@ import { ProductService } from './services/product.service';
     TestComponent,
     HomeComponent,
     ProductListComponent,
-    OrderListComponent
+    OrderListComponent,
+    ProductfilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

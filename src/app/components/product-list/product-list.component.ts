@@ -14,6 +14,7 @@ import { Subscription } from "rxjs/Subscription";
 })
 export class ProductListComponent implements OnInit, OnDestroy {
 
+  search: string;
   products: Array<Product>;
   subsParams: Subscription;
 
@@ -24,10 +25,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
     this.subsParams = this.route.params
       .mergeMap(params => this.productService.getProducts(+params['categoryId']))
       .subscribe(products => this.products = products);
-
-    this.subsParams = this.route.params
-      .mergeMap(params => this.productService.getProducts(+params['categoryId']))
-      .subscribe(function (products) { this.products = products });
   }
 
   ngOnDestroy() {
