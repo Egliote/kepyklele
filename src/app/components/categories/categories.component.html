@@ -1,0 +1,10 @@
+<table class="table">
+  <tr *ngFor="let category of categories" (click)="onClick(category)">
+    <td>{{category.id}}</td>
+    <td><a routerLink="/products/{{category.id}}">{{category.name}}</a></td>
+    <!--<td>
+      <img [src]="category.img">
+    </td>-->
+  </tr>
+</table>
+
