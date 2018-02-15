@@ -6,12 +6,16 @@
 </div>
 
 <table class="table">
+  <tr>
+    <th></th>
+    <th>Pavadinimas</th>
+    <th>Kaina</th>
+  </tr>
   <tr *ngFor="let product of products | productfilter:search">
-    <td>{{product.id}}</td>
+    <td>
+      <img src="/assets/productImagesSmall/{{product.id}}.jpg" />
+    </td>
     <td>{{product.name}}</td>
-    <td>{{product.price}}</td>
-    <!--<td>
-      <img [src]="category.img">
-    </td>-->
+    <td>{{product.price}} Eur</td>
   </tr>
 </table>
