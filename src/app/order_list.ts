@@ -16,4 +16,19 @@ export const ORDERS: Order[] = [
   {
     id: 5, customerName: "Bronius", date: "2018-02-05"
   },
+  {
+    id: 6, customerName: "Lina", date: "2018-02-05"
+  },
+  {
+    id: 7, customerName: "Aldona", date: "2018-02-06"
+  },
+  {
+    id: 8, customerName: "Arvydas", date: "2018-02-07"
+  },
+  {
+    id: 9, customerName: "Inga", date: "2018-02-07"
+  },
+  {
+    id: 10, customerName: "Laura", date: "2018-02-07"
+  }
 ];
