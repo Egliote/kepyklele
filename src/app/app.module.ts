@@ -18,6 +18,7 @@ import { ProductService } from './services/product.service';
 import { FormsModule } from '@angular/forms';
 import { ProductfilterPipe } from './productfilter.pipe';
 import { OrderitemService } from './services/orderitem.service';
+import { OrderlistService } from './services/orderlist.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { OrderitemService } from './services/orderitem.service';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [ProductService, OrderitemService],
+  providers: [ProductService, OrderitemService, OrderlistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
