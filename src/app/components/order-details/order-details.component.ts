@@ -6,20 +6,22 @@ import { OrderitemService } from "../../services/orderitem.service";
 
 import 'rxjs/add/operator/mergeMap';
 import { Subscription } from "rxjs/Subscription";
+import { OrderDetails } from "../../models/orderdetails";
+import { DecimalPipe } from '@angular/common';
 @Component({
   selector: 'app-order-details',
   templateUrl: './order-details.component.html',
   styleUrls: ['./order-details.component.css']
 })
 export class OrderDetailsComponent implements OnInit, OnDestroy {
-  orderitems: Array<OrderItem>;
+  orderDetails: Array<OrderDetails>;
   subsParams: Subscription;
   constructor(private orderitemService: OrderitemService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.subsParams = this.route.params
       .mergeMap(params => this.orderitemService.getOrderItems(+params['orderId']))
-      .subscribe(orderitems => this.orderitems = orderitems);
+      .subscribe(orderDetails => this.orderDetails = orderDetails);
   }
   ngOnDestroy() {
     this.subsParams.unsubscribe();

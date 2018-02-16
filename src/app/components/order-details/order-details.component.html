@@ -1,10 +1,14 @@
 <table class="table">
-  <tr *ngFor="let item of orderitems">
-    <td>{{item.id}}</td>
-    <td>{{item.productId}}</td>
+  <tr>
+    <th>Kepinio pavadinimas</th>
+    <th>Kiekis</th>
+    <th>Vnt. kaina</th>
+    <th>Suma</th>
+  </tr>
+  <tr *ngFor="let item of orderDetails">
+    <td>{{item.productName}}</td>
     <td>{{item.quantity}}</td>
-    <!--<td>
-      <img [src]="category.img">
-    </td>-->
+    <td>{{item.unitPrice}}</td>
+    <td>{{item.total | number:'1.2-2'}}</td>
   </tr>
 </table>
