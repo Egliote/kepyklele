@@ -1,6 +1,16 @@
-<table class="table">
-  <tr *ngFor="let order of orders" (click)="onClick(order)">
-    <td>{{order.id}}</td>
-    <td><a routerLink="/orders/{{order.id}}">{{order.customerName}}</a></td>
-  </tr>
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Nr.</th>
+      <th scope="col">Užsakovas</th>
+      <th scope="col">Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders" (click)="onClick(order)">
+      <td><a routerLink="/orders/{{order.id}}">{{order.id}}</a></td>
+      <td>{{order.customerName}}</td>
+      <td>{{order.date}}</td>
+    </tr>
+  </tbody>
 </table>

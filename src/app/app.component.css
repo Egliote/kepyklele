@@ -1,8 +1,7 @@
 .header {
-  text-align: center;
-  margin-top: 100px;
-  background-color: aliceblue;
-  height: 50px;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 160px;
 }
 
+.navbar-spacing {
+  margin-bottom: 40px;
+}

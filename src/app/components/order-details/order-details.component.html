@@ -1,14 +1,22 @@
-<table class="table">
-  <tr>
-    <th>Kepinio pavadinimas</th>
-    <th>Kiekis</th>
-    <th>Vnt. kaina</th>
-    <th>Suma</th>
-  </tr>
-  <tr *ngFor="let item of orderDetails">
-    <td>{{item.productName}}</td>
-    <td>{{item.quantity}}</td>
-    <td>{{item.unitPrice}}</td>
-    <td>{{item.total | number:'1.2-2'}}</td>
-  </tr>
+<table class="table table-striped table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Kepinio pavadinimas</th>
+      <th scope="col" class="text-center">Kiekis</th>
+      <th scope="col" class="text-center">Vnt. kaina</th>
+      <th scope="col" class="text-center">Suma</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of orderDetails">
+      <td>{{item.productName}}</td>
+      <td class="text-center">{{item.quantity}}</td>
+      <td class="text-right">{{item.unitPrice}} Eur</td>
+      <td class="text-right">{{item.total | number:'1.2-2'}} Eur</td>
+    </tr>
+    <tr>
+      <td class="text-right" colspan="3"><strong>Iš viso:</strong></td>
+      <td class="text-right"><strong>{{grandTotal | number:'1.2-2'}} Eur</strong></td>
+    </tr>
+  </tbody>
 </table>

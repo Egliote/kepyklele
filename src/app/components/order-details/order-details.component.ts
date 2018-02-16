@@ -16,12 +16,21 @@ import { DecimalPipe } from '@angular/common';
 export class OrderDetailsComponent implements OnInit, OnDestroy {
   orderDetails: Array<OrderDetails>;
   subsParams: Subscription;
+  grandTotal: number;
   constructor(private orderitemService: OrderitemService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.subsParams = this.route.params
       .mergeMap(params => this.orderitemService.getOrderItems(+params['orderId']))
-      .subscribe(orderDetails => this.orderDetails = orderDetails);
+      .subscribe(orderDetails => {
+        this.orderDetails = orderDetails;
+        let sum = 0;
+        for (let i = 0; i < orderDetails.length; i++)
+        {
+          sum = sum + orderDetails[i].total;
+        }
+        this.grandTotal = sum;
+      });
   }
   ngOnDestroy() {
     this.subsParams.unsubscribe();
