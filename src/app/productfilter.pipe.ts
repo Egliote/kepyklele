@@ -8,7 +8,7 @@ export class ProductfilterPipe implements PipeTransform {
 
   transform(value: Product[], args?: string): any {
     if (args)
-      return value.filter(product => product.name.toLowerCase().startsWith(args.toLowerCase()));
+      return value.filter(product => product.name.toLowerCase().indexOf(args.toLowerCase())>=0);
     else
       return value;
   }
