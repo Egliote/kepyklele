@@ -3,10 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\categories",
-    "\\src\\app\\header",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\categories",
+    "\\src\\app\\components\\order-list",
+    "\\src\\app\\components\\product-list",
+    "\\src\\app\\models",
+    "\\src\\app\\services",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\assets",
+  "SelectedNode": "\\src\\app\\order_item_list.ts",
   "PreviewInSolutionExplorer": false
 }

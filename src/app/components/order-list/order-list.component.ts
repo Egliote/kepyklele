@@ -11,18 +11,29 @@ import { Pagination } from "./pagination";
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-  orders: Order[];
   pagination: Pagination;
+  currentPageNumber: number = 1;
+  public searchString: string;
   constructor(private router: Router, private orderService: OrderlistService) { }
 
   ngOnInit() {
     this.orderService.getOrders().subscribe(orders => {
-      this.orders = orders;
       this.pagination = new Pagination(orders);
-      this.pagination.getPageLines(1);
-      this.router.navigateByUrl("/orders/" + orders[0].id);
+      this.changeRoute(1);
     });
   }
+
+  changeRoute(pageNumber: number) {
+    this.pagination.getPageLines(pageNumber);
+    this.router.navigateByUrl("/orders/" + this.pagination.pageLines[0].id);
+    this.currentPageNumber = pageNumber;
+  }
+
+  filter() {
+    this.pagination.filter(this.searchString);
+    this.router.navigateByUrl("/orders/" + this.pagination.pageLines[0].id);
+  }
+
   onClick(order: Order) {
     console.log("Paspaudziau: " + order.id + " pavadinimas: " + order.customerName);
   }
