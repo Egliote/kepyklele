@@ -25,13 +25,17 @@ export class OrderListComponent implements OnInit {
 
   changeRoute(pageNumber: number) {
     this.pagination.getPageLines(pageNumber);
-    this.router.navigateByUrl("/orders/" + this.pagination.pageLines[0].id);
+    if (this.pagination.pageLines && this.pagination.pageLines.length > 0) {
+      this.router.navigateByUrl("/orders/" + this.pagination.pageLines[0].id);
+    }
     this.currentPageNumber = pageNumber;
   }
 
   filter() {
     this.pagination.filter(this.searchString);
-    this.router.navigateByUrl("/orders/" + this.pagination.pageLines[0].id);
+    if (this.pagination.pageLines && this.pagination.pageLines.length > 0) {
+      this.router.navigateByUrl("/orders/" + this.pagination.pageLines[0].id);
+    }
   }
 
   onClick(order: Order) {
