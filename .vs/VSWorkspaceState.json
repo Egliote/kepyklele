@@ -5,12 +5,12 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\categories",
+    "\\src\\app\\components\\home",
+    "\\src\\app\\components\\order-details",
     "\\src\\app\\components\\order-list",
-    "\\src\\app\\components\\product-list",
-    "\\src\\app\\models",
-    "\\src\\app\\services",
-    "\\src\\assets"
+    "\\src\\app\\components\\orders",
+    "\\src\\app\\components\\products"
   ],
-  "SelectedNode": "\\src\\app\\order_item_list.ts",
+  "SelectedNode": "\\src\\app\\components\\order-list\\order-list.component.ts",
   "PreviewInSolutionExplorer": false
 }
